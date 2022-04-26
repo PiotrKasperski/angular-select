@@ -1,0 +1,30 @@
+$glass: rgba(255, 255, 255, 0.2);
+$glass-icon: rgba(255, 255, 255, 0.3);
+$gradient: linear-gradient(35deg, red, purple);
+$option: #320a28;
+
+.select-wrapper {
+  .select {
+    width: 20em;
+    height: 3em;
+    line-height: 3em;
+    background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg)
+        no-repeat right 0.8em center / 1.4em,
+      linear-gradient(to left, $glass-icon 3em, $glass 3em);
+    color: white;
+    border-radius: 0.25em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  }
+  .options-wrapper {
+    width: 20em;
+    background: $glass;
+    color: white;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  }
+  .select-option {
+    height: 3em;
+    &:hover {
+      background: $glass-icon;
+    }
+  }
+}

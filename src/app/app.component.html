@@ -1,0 +1,12 @@
+
+<div class="select-wrapper">
+  <div class="select" (click)="toggleMenu()">
+    {{ value }}
+  </div>
+  <div class="options-wrapper" *ngIf="isToggled">
+    <div class="select-option" (click)="onOptionClick('polski')">polski</div>
+    <div class="select-option" (click)="onOptionClick('angielski')">
+      angielski
+    </div>
+  </div>
+</div>
