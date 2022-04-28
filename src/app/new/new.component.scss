@@ -1,4 +1,50 @@
-p {
-  font-family: Lato;
-  //color: $test-color;
+@mixin icon($url: '', $color: #ffffff) {
+  -webkit-mask: url($url) no-repeat 100% 100%;
+  mask: url($url) no-repeat 100% 100%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: $color;
+}
+@mixin star {
+  width: 1em;
+  height: 1em;
+  @include icon('./../assets/icons/star_rate_white_24dp.svg', #151515);
+}
+.wrapper {
+  height: 1200px;
+  width: 96%;
+  margin: 2%;
+  background: #ededed;
+  box-sizing: border-box;
+  color: #151515;
+}
+.section {
+  width: 100%;
+  border: solid 1px grey;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  .item {
+    display: flex;
+    justify-content: space-around;
+
+    .rating {
+      display: flex;
+      .star {
+        @include star();
+      }
+      .star-fill {
+        @include star();
+        @include icon(
+          './../assets/icons/star_rate_white_24dp_filled.svg',
+          #151515
+        );
+      }
+      .star-half {
+        @include star();
+        @include icon('./../assets/icons/star_half_white_24dp.svg', #151515);
+      }
+    }
+  }
 }
