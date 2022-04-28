@@ -8,15 +8,15 @@
 @mixin star {
   width: 1em;
   height: 1em;
-  @include icon('./../assets/icons/star_rate_white_24dp.svg', #151515);
 }
+$font-color: #151515;
 .wrapper {
   height: 1200px;
   width: 96%;
   margin: 2%;
   background: #ededed;
   box-sizing: border-box;
-  color: #151515;
+  color: $font-color;
 }
 .section {
   width: 100%;
@@ -33,17 +33,21 @@
       display: flex;
       .star {
         @include star();
+        @include icon('./../assets/icons/grade_white_24dp.svg', $font-color);
       }
       .star-fill {
         @include star();
         @include icon(
           './../assets/icons/star_rate_white_24dp_filled.svg',
-          #151515
+          $font-color
         );
       }
       .star-half {
         @include star();
-        @include icon('./../assets/icons/star_half_white_24dp.svg', #151515);
+        @include icon(
+          './../assets/icons/star_half_white_24dp.svg',
+          $font-color
+        );
       }
     }
   }
