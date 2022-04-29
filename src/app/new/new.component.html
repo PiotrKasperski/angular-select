@@ -1,19 +1,9 @@
 <div class="wrapper">
   <div class="section">
     <div class="skills">
-      <div class="item">
-        <div class="label">git</div>
-        <app-rting [stars]="5" [rate]="7" [maxRate]="10"></app-rting>
-      </div>
-      <div class="item">
-        <div class="label">js</div>
-        <div class="rating">
-          <div class="star-fill"></div>
-          <div class="star-fill"></div>
-          <div class="star-fill"></div>
-          <div class="star-half"></div>
-          <div class="star"></div>
-        </div>
+      <div class="item" *ngFor="let skill of skills">
+        <div class="label">{{ skill.name }}</div>
+        <app-rting [stars]="5" [rate]="skill.rating" [maxRate]="10"></app-rting>
       </div>
     </div>
   </div>

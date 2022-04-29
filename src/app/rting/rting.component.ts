@@ -12,6 +12,7 @@ export class RtingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    if (this.stars == null) this.stars = this.maxRate;
     //TODO: maxrate=stars
   }
   fullStarsCounter(): Array<any> {
